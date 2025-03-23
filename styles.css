@@ -9,12 +9,15 @@ body {
     background-color: #f5f7fa;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 header {
@@ -53,20 +56,26 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    width: 100%;
 }
 
 .input-section {
     padding: 2rem;
     background-color: #f8fafc;
     border-right: 1px solid #e1e4e8;
+    min-width: 0;
+    width: 100%;
 }
 
 .results-section {
     padding: 2rem;
+    min-width: 0;
+    width: 100%;
 }
 
 .input-group {
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 label {
@@ -118,6 +127,7 @@ button:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 .summary-item {
@@ -137,6 +147,7 @@ button:hover {
     font-size: 1.5rem;
     font-weight: 600;
     color: #1e40af;
+    word-break: break-word;
 }
 
 .chart-container {
@@ -169,5 +180,40 @@ button:hover {
     
     .summary {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .input-section, 
+    .results-section {
+        padding: 1rem;
+    }
+    
+    .summary-item p {
+        font-size: 1.2rem;
+    }
+}
+
+/* ウィンドウサイズ変更に対応するためのリセット */
+@media (min-width: 993px) {
+    .simulator {
+        grid-template-columns: 1fr 1.5fr;
+    }
+    
+    .input-section {
+        border-right: 1px solid #e1e4e8;
+        border-bottom: none;
     }
 } 
